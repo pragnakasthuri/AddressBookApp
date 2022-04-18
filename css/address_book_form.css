@@ -38,7 +38,7 @@ UC 1 Created css for header of address book app.
     font: normal normal bold 20px/25px Montserrat;
     font-family: "Montserrat", sans-serif;
     letter-spacing: 0px;
-    color: rgb(56, 5, 199);
+    color: #008CFF;
     text-transform: capitalize;
 }
 .add-book{
@@ -92,4 +92,88 @@ UC 1 Created css for header of address book app.
 .cross{
     align-items: right;
     margin-right: 50px;;     
+}
+/* UC 3*/
+.input {
+    width: 100%;
+    padding:20px;
+    border:1px solid black;
+    border-radius: 4px;
+    resize:vertical;
+}
+
+.phone-content {
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    align-items: left;
+    border: 0px solid green;
+    padding-top: 00px;
+}
+
+.address {
+    width: 100%;
+    line-height: 700%;
+    padding:20px;
+    border:1px solid black;
+    border-radius: 4px;
+    resize:vertical;
+}
+
+select{
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font: normal normal normal 16px Roboto;
+    letter-spacing: 0px;
+    color: #42525f;
+    background-color: transparent;
+    font: normal normal bold 15px/25px Montserrat;
+} 
+
+.address-content {
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: left;
+    border: 0px solid green;
+    padding-top: 00px;
+    font: normal normal 15px/25px Montserrat;
+   
+}
+
+.row-citystate {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: center;
+    border: 0px solid green;
+    padding-top: 00px;
+    
+}
+
+.input1 {
+    width: 100%;
+    padding:10px;
+    border:1px solid black;
+    resize:vertical;
+    line-height:80%;
+    margin-block-start: -100px;
+}
+
+.row-content {
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    align-items: left;
+    border: 0px solid green;
+    padding-top: 40px;
 }
