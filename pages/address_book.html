@@ -20,6 +20,7 @@
         </div>
     </header>
     <div class="form-header">
+        <form  class="form" action="#" onreset="resetForm()" onsubmit="save(event)">
       <div class="form-header-text" >
         <p class="form-heading">Person Address form</p>
         <!--UC 2-->
@@ -105,6 +106,11 @@
           </label>
         </div>
 </div>
+
+<div class="submit-reset">
+    <button type="submit" class="button submitButton" id="submitButton">Add</button>
+    <button type="reset" class="resetButton button">Reset</button>
+  </div>
 </form>
 </div>
 <script src="../javascript/address_book_form.js"></script>
