@@ -71,3 +71,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
   
     });
   });
+  
+  const save = (event) => {
+    event.preventDefault();
+    alert("Details submitted successfully");
+  }
+  
+  const resetForm = () => {
+    
+  }
