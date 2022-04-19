@@ -57,12 +57,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
   });
   
   const save = (event) => {
-    console.log("sdf");
     event.preventDefault();
     event.stopPropagation();
     let contactData = createContact();
-    let jsonObject = JSON.stringify(contactData);
-    alert(jsonObject);
+    createAndUpdateStorage(contactData);
   }
   
   const createContact = () => {
@@ -75,8 +73,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
     contactData.state = getInputValueById('#state');
     contactData.zip = getInputValueById('#zip');
     contactData.phone = getInputValueById('#phone');
-    contactData.email = getInputValueById('#email');
     return contactData;
+  }
+  
+  function createAndUpdateStorage(contactData){
+    let contactList = JSON.parse(localStorage.getItem("ContactList"));
+  
+    if(contactList != undefined){
+        contactList.push(contactData);
+    }
+    else{
+        contactList = [contactData];
+    }
+    // alert(contactList.toString());
+    localStorage.setItem("ContactList",JSON.stringify(contactList));
+    window.location = "http://127.0.0.1:5500/pages/homepage.html";
   }
   
   const getInputValueById = (id) => {
