@@ -19,7 +19,7 @@ class Contact {
     if (nameRegex.test(name)) {
       this._name = name;
     } else {
-      throw "Invalid NAME";
+      throw "Invalid Name";
     }
   }
 
@@ -30,7 +30,7 @@ class Contact {
     if (phoneNumberRegex.test(phoneNumber)) {
       this._phoneNumber = phoneNumber;
     } else {
-      throw "Invalid PHONE NUMBER";
+      throw "Invalid Phone number";
     }   
   }
 
@@ -41,7 +41,7 @@ class Contact {
     if (addressRegex.test(address)) {
       this._address = address;
     } else {
-      throw "Invalid ADDRESS";
+      throw "Invalid Address";
     }
   }
   
@@ -66,7 +66,7 @@ class Contact {
     if (zipCodeRegex.test(zipCode)) {
       this._zipCode = zipCode;
     } else {
-      throw "Invalid ZIPCODE";
+      throw "Invalid Zipcode";
     }
   }
 

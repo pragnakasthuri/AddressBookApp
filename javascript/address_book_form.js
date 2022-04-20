@@ -1,60 +1,73 @@
 window.addEventListener("DOMContentLoaded", (event) => {
+  validateName();
+  validatePhoneNumber();
+  validateAddress();
+  validateZipcode();
+});
+
+const validateName = () => {
   const name = document.querySelector("#name");
   name.addEventListener("input", function () {
     if (name.value.length == 0) {
-      setTextValue(".name_error", "");
+      setTextValue(".name-error", "");
       return;
     }
     try {
       new Contact().name = name.value;
-      setTextValue(".name_error", "");
+      setTextValue(".name-error", "");
     } catch (error) {
-      setTextValue(".name_error", error);
+      setTextValue(".name-error", error);
     }
   });
+};
 
+const validatePhoneNumber = () => {
   const phoneNumber = document.querySelector("#phoneNumber");
   phoneNumber.addEventListener("input", function () {
     if (phoneNumber.value.length == 0) {
-      setTextValue(".tel_error", "");
+      setTextValue(".tel-error", "");
       return;
     }
     try {
       new Contact().phoneNumber = phoneNumber.value;
-      setTextValue(".tel_error", "");
+      setTextValue(".tel-error", "");
     } catch (error) {
-      setTextValue(".tel_error", error);
+      setTextValue(".tel-error", error);
     }
   });
+};
 
+const validateAddress = () => {
   const address = document.querySelector("#address");
   address.addEventListener("input", function () {
     if (address.value.length == 0) {
-      setTextValue(".address_error", "");
+      setTextValue(".address-error", "");
       return;
     }
     try {
       new Contact().address = address.value;
-      setTextValue(".address_error", "");
+      setTextValue(".address-error", "");
     } catch (error) {
-      setTextValue(".address_error", error);
+      setTextValue(".address-error", error);
     }
   });
+};
 
+const validateZipcode = () => {
   const zip = document.querySelector("#zip");
   zip.addEventListener("input", function () {
     if (zip.value.length == 0) {
-      setTextValue(".zip_error", "");
+      setTextValue(".zip-error", "");
       return;
     }
     try {
       new Contact().zip = zip.value;
-      setTextValue(".zip_error", "");
+      setTextValue(".zip-error", "");
     } catch (error) {
-      setTextValue(".zip_error", error);
+      setTextValue(".zip-error", error);
     }
   });
-});
+};
 
 const save = () => {
   try {
@@ -73,9 +86,9 @@ const createAndUpdateStorage = (contact) => {
     contactList = [contact];
   }
   alert(contact.toString());
-  alert("Added successfully");
+  alert("Contact Added Sucessfully");
   localStorage.setItem("ContactList", JSON.stringify(contactList));
-};
+}
 
 const createContact = () => {
   let contact = new Contact();
@@ -84,21 +97,21 @@ const createContact = () => {
   try {
     contact.name = getInputValueById("#name");
   } catch (error) {
-    setTextValue(".name_error", error);
+    setTextValue(".name-error", error);
     throw error;
   }
 
   try {
     contact.phoneNumber = getInputValueById("#phoneNumber");
   } catch (error) {
-    setTextValue(".tel_error", error);
+    setTextValue(".tel-error", error);
     throw error;
   }
 
   try {
     contact.address = getInputValueById("#address");
   } catch (error) {
-    setTextValue(".address_error", error);
+    setTextValue(".address-error", error);
     throw error;
   }
 
@@ -119,21 +132,12 @@ const createContact = () => {
   try {
     contact.zip = getInputValueById("#zip");
   } catch (error) {
-    setTextValue(".zip_error", error);
+    setTextValue(".zip-error", error);
     throw error;
   }
 
   alert(contact.toString());
   return contact;
-};
-
-const resetForm = () => {
-    setTextValue('#name', '');
-    setTextValue('#phoneNumber', '');
-    setTextValue('#address', '');
-    setValue('#city', 'Select City');
-    setValue('#month', 'Select State');
-    setTextValue('#zip', '');
 }
 
 const setTextValue = (id, value) => {
@@ -145,8 +149,3 @@ const getInputValueById = (property) => {
   let value = document.querySelector(property).value;
   return value;
 };
-
-const setValue = (id, value) => {
-    const element = document.querySelector(id);
-    element.value = value;
-}

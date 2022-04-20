@@ -33,7 +33,7 @@ const createAddressBookJSON = () => {
           _address: 'Nallagandla',
           _city: 'Hyderabad',
           _state: 'Telangan',
-          _zipCode: '500029',
+          _zipCode: '500019',
           _phoneNumber: '91 8978675645'
       },
       {
