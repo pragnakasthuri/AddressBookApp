@@ -94,7 +94,26 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let value = document.querySelector(id).value;
     return value;
   }
-  
   const resetForm = () => {
-    
-  }
+    setValue('#name','');
+    setValue('#address','');
+    setSelectedIndex('#city',0);
+    setSelectedIndex('#state',0);
+    setValue('#zip','');
+    setValue('#phone','');
+    setValue('#email','');
+}
+
+const setValue = (id,value) => {
+  const element = document.querySelector(id);
+  element.value = value;
+}
+
+const setSelectedIndex = (id,index) => {
+  const element = document.querySelector(id);
+  element.selectedIndex = index;
+}
+  
+const cancel = () => {
+    window.location = "http://127.0.0.1:5500/pages/homepage.html";
+}
