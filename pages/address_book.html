@@ -10,109 +10,112 @@
         <title>AddressBook form</title>
     </head>
     <!--------------------Creating Header---------------------->
-
+    <body>
     <header class="header-content header">
-        <!-----------for logo--------->
-        <img src="../assets/logo.jpeg" alt="" width="5%"> 
-        <div>
-            <span class = "add-text">ADDRESS</span><br>
-            <span class = "add-text add-book">BOOK</span>
+        <div class="logo-content">
+          <img src="../assets/logo.jpeg">
+          <div>
+            <span class="address-text">Address</span><br>
+            <span class="address-text book">Book</span>
+          </div>
         </div>
     </header>
-    <div class="form-header">
-        <form  class="form" action="#" onreset="resetForm()" onsubmit="save(event)">
-      <div class="form-header-text" >
-        <p class="form-heading">Person Address form</p>
-        <!--UC 2-->
-            <img src="../assets/cancel.png" alt="" width="4%" class="cross" style="float: right" onclick="cancel()"> 
-        </div>
+    <div class="main-content">
+        <div class="form-header">
+            <form  class="form" action="#" onreset="resetForm()" onsubmit="save(event)">
+                <div class="form-header-text" >
+                    <p class="form-heading">Person Address form</p>
+                    <!--UC 2-->
+                    <img src="../assets/cancel.jpeg" alt="" width="4%" class="cross" style="float: right" onclick="cancel()"> 
+                </div>
+                <!--UC 3-->
+                <div class = "row-content">
+                    <label class="label text" for="name">Full Name</label>
+                    <input class="input" type="text" id="name" name="name" required> 
+                    <error-output class="text-error" for="text"></error-output>
+                </div>
+                <div class = "phone-content">
+                    <label class="label text" for="phone">Phone Number</label>
+                    <input class="input" type="text" id="phone" name="phone" required> 
+                    <error-output class="phone-error" for="text"></error-output>
+                </div>  
+                <div class = "phone-content">
+                    <label class="label text" for="address">Address</label>
+                    <input class="address" type="text" id="address" name="address" required> 
+                    <error-output class="address-error" for="text"></error-output>
+                </div>
 
-     <!--UC 3-->
-     <div class = "row-content">
-        <label class="label text" for="name">Full Name</label>
-        <input class="input" type="text" id="name" name="name" required> 
-        <error-output class="text-error" for="text"></error-output>
-      </div>
-      <div class = "phone-content">
-        <label class="label text" for="phone">Phone Number</label>
-        <input class="input" type="text" id="phone" name="phone" required> 
-        <error-output class="phone-error" for="text"></error-output>
-      </div>  
-      <div class = "phone-content">
-        <label class="label text" for="address">Address</label>
-        <input class="address" type="text" id="address" name="address" required> 
-        <error-output class="address-error" for="text"></error-output>
-      </div>
+                <div class="address-content">
+                    <div class = "row-citystate">
+                    <label class="label text" >
+                    <div for="city">City</div>
+                    <select id="city" name="city" >
+                    <option value="Select City" disabled selected>Select City</option>
+                    <option value="Amroha">Ambala</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Bhopal">Bhopal</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Ghaziabad">Ghaziabad</option>
+                    <option value="Gurgaon">Gurgaon</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Indore">Indore</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Lucknow">Lucknow</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Noida">Noida</option>
+                    <option value="Patna">Patna</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Rohtak">Rohtak</option>
+                    </select>
+                    </label>
+                    </div>
 
-      <div class="address-content">
-        <div class = "row-citystate">
-          <label class="label text" >
-        <div for="city">City</div>
-        <select id="city" name="city" >
-          <option value="Select City" disabled selected>Select City</option>
-          <option value="Amroha">Ambala</option>
-          <option value="Bangalore">Bangalore</option>
-          <option value="Bhopal">Bhopal</option>
-          <option value="Chandigarh">Chandigarh</option>
-          <option value="Chennai">Chennai</option>
-          <option value="Delhi">Delhi</option>
-          <option value="Ghaziabad">Ghaziabad</option>
-          <option value="Gurgaon">Gurgaon</option>
-          <option value="Hyderabad">Hyderabad</option>
-          <option value="Indore">Indore</option>
-          <option value="Jaipur">Jaipur</option>
-          <option value="Kolkata">Kolkata</option>
-          <option value="Lucknow">Lucknow</option>
-          <option value="Mumbai">Mumbai</option>
-          <option value="Noida">Noida</option>
-          <option value="Patna">Patna</option>
-          <option value="Pune">Pune</option>
-          <option value="Rohtak">Rohtak</option>
-        </select>
-           </label>
-           </div>
+                    <div class = "row-citystate">
+                        <label class="label text">
+                        <div for="state">State</div>
+                        <select id="state" name="state">
+                        <option value="Select State" disabled selected>Select State</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgadh">Chhattisgadh</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        </select>
+                        </label>
+                    </div>
 
-          <div class = "row-citystate">
-            <label class="label text">
-            <div for="state">State</div>
-            <select id="state" name="state">
-              <option value="Select State" disabled selected>Select State</option>
-              <option value="Assam">Assam</option>
-              <option value="Bihar">Bihar</option>
-              <option value="Chhattisgadh">Chhattisgadh</option>
-              <option value="Delhi">Delhi</option>
-              <option value="Goa">Goa</option>
-              <option value="Gujarat">Gujarat</option>
-              <option value="Maharashtra">Maharashtra</option>
-              <option value="Manipur">Manipur</option>
-              <option value="Meghalaya">Meghalaya</option>
-              <option value="Mizoram">Mizoram</option>
-              <option value="Odisha">Odisha</option>
-              <option value="Punjab">Punjab</option>
-              <option value="Rajasthan">Rajasthan</option>
-              <option value="Sikkim">Sikkim</option>
-              <option value="Tamil Nadu">Tamil Nadu</option>
-              <option value="Uttar Pradesh">Uttar Pradesh</option>
-              <option value="Telangana">Telangana</option>
-              <option value="Tripura">Tripura</option>
-            </select>
-            </label>
-        </div>
+                    <div class = "row-citystate">     
+                    <label class="label text"> 
+                    <label for="zip">Zip Code</label>
+                    <input class="input1" type="text" id="zip" name="zip"  placeholder="Zip Code" required>
+                    </label>
+                    </div>
+                </div>
 
-        <div class = "row-citystate">     
-          <label class="label text"> 
-          <label for="zip">Zip Code</label>
-          <input class="input1" type="text" id="zip" name="zip"  placeholder="Zip Code" required>
-          </label>
-        </div>
-</div>
-
-<div class="submit-reset">
-    <button type="submit" class="button submitButton" id="submitButton">Add</button>
-    <button type="reset" class="resetButton button">Reset</button>
-  </div>
-</form>
-</div>
+            <div class="submit-reset">
+                <button type="submit" class="button submitButton" id="submitButton">Add</button>
+                <button type="reset" class="resetButton button">Reset</button>
+            </div>
+        </form>
+    </div>
+    </div>
+    </body>
 <script src="../javascript/address_book_form.js"></script>
 <script src="../javascript/address_book.js"></script>
 </body>
