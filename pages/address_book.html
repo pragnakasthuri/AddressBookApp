@@ -1,124 +1,128 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap"> 
-        <!--linked CSS file-->
-        <link rel="stylesheet" type="text/css" href="../css/address_book_form.css">
-        <!--Title for address book form-->
-        <title>AddressBook form</title>
-    </head>
-    <!--------------------Creating Header---------------------->
-    <body>
-    <header class="header-content header">
-        <div class="logo-content">
-          <img src="../assets/logo.jpeg">
-          <div>
-            <span class="address-text">Address</span><br>
-            <span class="address-text book">Book</span>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1,500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="..\css\address_book_form.css">
+  <title>Address Book Form</title>
+</head>
+
+<body>
+  <!-- UC_1 -->
+  <header class="header-content header">
+    <div class="logo-content">
+      <img src="..\assets\logo.jpeg" alt="logo" />
+      <div>
+        <span class="addressBook-text">Address</span><br />
+        <span class="addressBook-text addressBook-book">Book</span>
+      </div>
+    </div>
+  </header>
+  <!-- UC_2 -->
+  <div class="form-content">
+    <form action="#" class="form" onreset="resetForm()" onsubmit="save()">
+      <div class="form_header">
+        <div class="form_header_text">Person Address Form</div>
+        <a href="..\pages\homepage.html"><img src="..\assets\cancel.jpeg" alt="logo"></a>
+      </div>
+
+      <!-- UC 3 -->
+      <div class="form_content">
+        <div class="row_content">
+          <label for="name" class="label text">Full Name</label>
+          <br>
+          <input type="text" class="input" id="name" name="name" placeholder="Full Name" autocomplete="off" required>
+          <error-output class="name_error"></error-output>
+        </div>
+        <div class="row_content">
+          <label for="phoneNumber" class="label text">Phone Number</label>
+          <br>
+          <input type="tel" class="input" id="phoneNumber" name="phoneNumber" placeholder="Phone Number"
+            autocomplete="off" required>
+          <error-output class="tel_error"></error-output>
+        </div>
+        <div class="row_content">
+          <label for="address" class="label text">Address</label>
+          <br>
+          <textarea name="address" id="address" placeholder="Address" autocomplete="off" required></textarea>
+          <error-output class="address_error"></error-output>
+        </div>
+        <div class="row_content">
+          <div class="column_constrains">
+            <div class="column_content">
+              <label for="city" class="label text">City</label>
+              <br>
+              <select name="city" id="city" required>
+                <option selected disabled hidden value="Select City">Select City</option>
+                <option value="Amroha">Ambala</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Bhopal">Bhopal</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Ghaziabad">Ghaziabad</option>
+                <option value="Gurgaon">Gurgaon</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Indore">Indore</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Lucknow">Lucknow</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Noida">Noida</option>
+                <option value="Patna">Patna</option>
+                <option value="Pune">Pune</option>
+                <option value="Rohtak">Rohtak</option>
+              </select>
+            </div>
+            <div class="column_content">
+              <label for="state" class="label text">State</label>
+              <br>
+              <select name="state" id="state">
+                <option selected disabled hidden value="Select State">Select State</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chhattisgadh">Chhattisgadh</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+              </select>
+            </div>
+            <div class="column_content">
+              <label for="zip" class="label text">Zip code</label>
+              <br>
+              <input type="text" class="input zipcode" id="zip" name="zip" autocomplete="off" placeholder="Zip Code"
+                required>
+              <error-output class="zip_error"></error-output>
+            </div>
           </div>
         </div>
-    </header>
-    <div class="main-content">
-        <div class="form-header">
-            <form  class="form" action="#" onreset="resetForm()" onsubmit="save(event)">
-                <div class="form-header-text" >
-                    <p class="form-heading">Person Address form</p>
-                    <!--UC 2-->
-                    <img src="../assets/cancel.jpeg" alt="" width="4%" class="cross" style="float: right" onclick="cancel()"> 
-                </div>
-                <!--UC 3-->
-                <div class = "row-content">
-                    <label class="label text" for="name">Full Name</label>
-                    <input class="input" type="text" id="name" name="name" required> 
-                    <error-output class="text-error" for="text"></error-output>
-                </div>
-                <div class = "phone-content">
-                    <label class="label text" for="phone">Phone Number</label>
-                    <input class="input" type="text" id="phone" name="phone" required> 
-                    <error-output class="phone-error" for="text"></error-output>
-                </div>  
-                <div class = "phone-content">
-                    <label class="label text" for="address">Address</label>
-                    <input class="address" type="text" id="address" name="address" required> 
-                    <error-output class="address-error" for="text"></error-output>
-                </div>
-
-                <div class="address-content">
-                    <div class = "row-citystate">
-                    <label class="label text" >
-                    <div for="city">City</div>
-                    <select id="city" name="city" >
-                    <option value="Select City" disabled selected>Select City</option>
-                    <option value="Amroha">Ambala</option>
-                    <option value="Bangalore">Bangalore</option>
-                    <option value="Bhopal">Bhopal</option>
-                    <option value="Chandigarh">Chandigarh</option>
-                    <option value="Chennai">Chennai</option>
-                    <option value="Delhi">Delhi</option>
-                    <option value="Ghaziabad">Ghaziabad</option>
-                    <option value="Gurgaon">Gurgaon</option>
-                    <option value="Hyderabad">Hyderabad</option>
-                    <option value="Indore">Indore</option>
-                    <option value="Jaipur">Jaipur</option>
-                    <option value="Kolkata">Kolkata</option>
-                    <option value="Lucknow">Lucknow</option>
-                    <option value="Mumbai">Mumbai</option>
-                    <option value="Noida">Noida</option>
-                    <option value="Patna">Patna</option>
-                    <option value="Pune">Pune</option>
-                    <option value="Rohtak">Rohtak</option>
-                    </select>
-                    </label>
-                    </div>
-
-                    <div class = "row-citystate">
-                        <label class="label text">
-                        <div for="state">State</div>
-                        <select id="state" name="state">
-                        <option value="Select State" disabled selected>Select State</option>
-                        <option value="Assam">Assam</option>
-                        <option value="Bihar">Bihar</option>
-                        <option value="Chhattisgadh">Chhattisgadh</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="Goa">Goa</option>
-                        <option value="Gujarat">Gujarat</option>
-                        <option value="Maharashtra">Maharashtra</option>
-                        <option value="Manipur">Manipur</option>
-                        <option value="Meghalaya">Meghalaya</option>
-                        <option value="Mizoram">Mizoram</option>
-                        <option value="Odisha">Odisha</option>
-                        <option value="Punjab">Punjab</option>
-                        <option value="Rajasthan">Rajasthan</option>
-                        <option value="Sikkim">Sikkim</option>
-                        <option value="Tamil Nadu">Tamil Nadu</option>
-                        <option value="Uttar Pradesh">Uttar Pradesh</option>
-                        <option value="Telangana">Telangana</option>
-                        <option value="Tripura">Tripura</option>
-                        </select>
-                        </label>
-                    </div>
-
-                    <div class = "row-citystate">     
-                    <label class="label text"> 
-                    <label for="zip">Zip Code</label>
-                    <input class="input1" type="text" id="zip" name="zip"  placeholder="Zip Code" required>
-                    </label>
-                    </div>
-                </div>
-
-            <div class="submit-reset">
-                <button type="submit" class="button submitButton" id="submitButton">Add</button>
-                <button type="reset" class="resetButton button">Reset</button>
-            </div>
-        </form>
-    </div>
-    </div>
-    </body>
-<script src="../javascript/address_book_form.js"></script>
-<script src="../javascript/address_book.js"></script>
+        <div class="button_content">
+          <button type="submit" class="button button_submit" id="submitButton">Add</button>
+          <button type="reset" class="button button_reset" id="resetButton">Reset</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="..\javascript\address_book_form.js"></script>
+  <script src="..\javascript\address_book.js"></script>
 </body>
-</html>
-</body>
+
 </html>
