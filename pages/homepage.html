@@ -9,6 +9,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1,500&display=swap"
         rel="stylesheet" />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,600;1,500&display=swap"
+    rel="stylesheet" />
     <link rel="stylesheet" href="..\css\home.css">
     <title>Address Book Home</title>
 </head>
@@ -29,37 +32,35 @@
             Person Details
             <div class="person-count">10</div>
           </div>
-          <a href="..\html\address_book_form.html" class="add-button">
-            <img src="..\assets\add1.svg" alt="">+ Add Person
+          <a href="..\pages\address_book_form.html" class="add-button">
+            <img src="..\assets\add1.svg" alt="">+  Add Person
           </a>
         </div>
         <div class="table-main">
             <table id="table-display" class="table">
-             <tr>
+             <tr> 
               <th>Full Name</th>
               <th>Address</th>
               <th>City</th>
               <th>State</th>
               <th>Zip Code</th>
               <th>Phone Number</th>
-              <th>Actions</th>
              </tr>
              <tr>
-              <td>Pragna</td>
-              <td>Nallagandla</td>
+              <td>Pragna Kasthuri</td>
+              <td>Serilingampalli</td>
               <td>Hyderabad</td>
               <td>Telangana</td>
-              <td>500029</td>
-              <td>91 8978675645</td>
+              <td>500019</td>
+              <td>91 9898989898</td>
               <td>
-               <img src="..\assets\delete-black-18dp.svg" alt="delete" id="1" onclick="remove(this)">
-               <img src="..\assets\create-black-18dp.svg" alt="edit" id="1" onclick="update(this)">
-              </td>
-             </tr>
-            </table>
-           </div>
-      </div>
-      <script src="..\javascript\address_book_home.js"></script>
-      <script src="..\javascript\contact.js"></script>
-</body>
-</html>
+                <img src="..\assets\delete-black-18dp.svg" alt="delete" id="1" onclick="remove(this)">
+                <img src="..\assets\create-black-18dp.svg" alt="edit" id="1" onclick="update(this)">
+               </td>
+              </tr>
+             </table>
+            </div>
+       </div>
+       <script src="..\javascript\home.js"></script>
+ </body>
+ </html>

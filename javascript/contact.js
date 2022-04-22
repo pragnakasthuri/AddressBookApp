@@ -1,10 +1,9 @@
 const nameRegex = RegExp("^[A-Z]{1}[A-Za-z\\s]{2,}$");
 const phoneNumberRegex = RegExp("^[0-9]{2}\\s{1}[7-9]{1}[0-9]{9}$");
-const addressRegex = RegExp('^[a-zA-Z0-9#,&]{4,}$');
-const zipCodeRegex = RegExp("^[0-9]{3}\\s{0,1}[0-9]{3}$");
+const addressRegex = RegExp("^[a-zA-Z0-9#,&\\s]{4,}$");
+const zipRegex = RegExp("^[0-9]{3}\\s{0,1}[0-9]{3}$");
 
 class Contact {
-  
   get id() {
     return this._id;
   }
@@ -19,7 +18,7 @@ class Contact {
     if (nameRegex.test(name)) {
       this._name = name;
     } else {
-      throw "Invalid Name";
+      throw "NAME is Invalid!";
     }
   }
 
@@ -30,8 +29,8 @@ class Contact {
     if (phoneNumberRegex.test(phoneNumber)) {
       this._phoneNumber = phoneNumber;
     } else {
-      throw "Invalid Phone number";
-    }   
+      throw "PHONE NUMBER is Invalid!";
+    }
   }
 
   get address() {
@@ -41,17 +40,17 @@ class Contact {
     if (addressRegex.test(address)) {
       this._address = address;
     } else {
-      throw "Invalid Address";
+      throw "ADDRESS is Invalid!";
     }
   }
-  
+
   get city() {
     return this._city;
   }
   set city(city) {
     this._city = city;
   }
-  
+
   get state() {
     return this._state;
   }
@@ -59,25 +58,18 @@ class Contact {
     this._state = state;
   }
 
-  get zipCode() {
-    return this._zipCode;
+  get zip() {
+    return this._zip;
   }
-  set zipCode(zipCode) {
-    if (zipCodeRegex.test(zipCode)) {
-      this._zipCode = zipCode;
+  set zip(zip) {
+    if (zipRegex.test(zip)) {
+      this._zip = zip;
     } else {
-      throw "Invalid Zipcode";
+      throw "ZIP is Invalid!";
     }
   }
 
-  toString(){
-      return `id ${this.id} 
-              Name ${this.name} 
-              Phone Number ${this.phoneNumber} 
-              Address ${this.address} 
-              City ${this.city} 
-              State ${this.state} 
-              ZipCode  ${this.zipCode}`;
+  toString() {
+    return `id: ${this.id} \nName: ${this.name} \nPhone Number: ${this.phoneNumber} \nAddress: ${this.address} \nCity: ${this.city} \nState: ${this.state} \nZip:  ${this.zip}`;
   }
-
 }

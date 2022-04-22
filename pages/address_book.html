@@ -14,7 +14,6 @@
 </head>
 
 <body>
-  <!-- UC_1 -->
   <header class="header-content header">
     <div class="logo-content">
       <img src="..\assets\logo.jpeg" alt="logo" />
@@ -24,99 +23,78 @@
       </div>
     </div>
   </header>
-  <!-- UC_2 -->
+
+  <!-- UC 2 -->
   <div class="form-content">
     <form action="#" class="form" onreset="resetForm()" onsubmit="save()">
-      <div class="form_header">
-        <div class="form_header_text">Person Address Form</div>
-        <a href="..\pages\homepage.html"><img src="..\assets\cancel.jpeg" alt="logo"></a>
+      <div class="form-head">
+        <div class="form-head-text">Person Address Form</div>
+        <a href="..\pages\homepage.html"><img class="form-head-image" src="..\assets\cancel.jpeg"
+            alt="logo"></a>
       </div>
-
       <!-- UC 3 -->
-      <div class="form_content">
-        <div class="row_content">
+      <div class="form-constrains">
+        <div class="row-content">
           <label for="name" class="label text">Full Name</label>
           <br>
-          <input type="text" class="input" id="name" name="name" placeholder="Full Name" autocomplete="off" required>
-          <error-output class="name_error"></error-output>
+          <input type="text" class="input" id="name" name="name" placeholder="Your name.." autocomplete="off" required>
+          <error-output class="name-error"></error-output>
         </div>
-        <div class="row_content">
+        <div class="row-content">
           <label for="phoneNumber" class="label text">Phone Number</label>
           <br>
-          <input type="tel" class="input" id="phoneNumber" name="phoneNumber" placeholder="Phone Number"
+          <input type="tel" class="input" id="phoneNumber" name="phoneNumber" placeholder="Your phone number.."
             autocomplete="off" required>
-          <error-output class="tel_error"></error-output>
+          <error-output class="tel-error"></error-output>
         </div>
-        <div class="row_content">
+        <div class="row-content">
           <label for="address" class="label text">Address</label>
           <br>
-          <textarea name="address" id="address" placeholder="Address" autocomplete="off" required></textarea>
-          <error-output class="address_error"></error-output>
+          <textarea name="address" id="address" placeholder="Your address.." autocomplete="off" required></textarea>
+          <error-output class="address-error"></error-output>
         </div>
-        <div class="row_content">
-          <div class="column_constrains">
-            <div class="column_content">
+        <div class="row-content">
+          <div class="column-constrains">
+            <div class="column-content">
               <label for="city" class="label text">City</label>
               <br>
               <select name="city" id="city" required>
                 <option selected disabled hidden value="Select City">Select City</option>
-                <option value="Amroha">Ambala</option>
-                <option value="Bangalore">Bangalore</option>
-                <option value="Bhopal">Bhopal</option>
-                <option value="Chandigarh">Chandigarh</option>
-                <option value="Chennai">Chennai</option>
-                <option value="Delhi">Delhi</option>
-                <option value="Ghaziabad">Ghaziabad</option>
-                <option value="Gurgaon">Gurgaon</option>
+                <option value="Amaravathi">Amaravathi</option>
                 <option value="Hyderabad">Hyderabad</option>
-                <option value="Indore">Indore</option>
-                <option value="Jaipur">Jaipur</option>
-                <option value="Kolkata">Kolkata</option>
-                <option value="Lucknow">Lucknow</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Bangalore">Bangalore</option>
                 <option value="Mumbai">Mumbai</option>
-                <option value="Noida">Noida</option>
-                <option value="Patna">Patna</option>
-                <option value="Pune">Pune</option>
-                <option value="Rohtak">Rohtak</option>
+                <option value="Bhopal">Bhopal</option>
               </select>
             </div>
-            <div class="column_content">
+            <div class="column-content">
               <label for="state" class="label text">State</label>
               <br>
               <select name="state" id="state">
                 <option selected disabled hidden value="Select State">Select State</option>
-                <option value="Assam">Assam</option>
-                <option value="Bihar">Bihar</option>
-                <option value="Chhattisgadh">Chhattisgadh</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
                 <option value="Delhi">Delhi</option>
-                <option value="Goa">Goa</option>
                 <option value="Gujarat">Gujarat</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
                 <option value="Maharashtra">Maharashtra</option>
-                <option value="Manipur">Manipur</option>
-                <option value="Meghalaya">Meghalaya</option>
-                <option value="Mizoram">Mizoram</option>
-                <option value="Odisha">Odisha</option>
-                <option value="Punjab">Punjab</option>
-                <option value="Rajasthan">Rajasthan</option>
-                <option value="Sikkim">Sikkim</option>
-                <option value="Tamil Nadu">Tamil Nadu</option>
-                <option value="Uttar Pradesh">Uttar Pradesh</option>
                 <option value="Telangana">Telangana</option>
-                <option value="Tripura">Tripura</option>
+
               </select>
             </div>
-            <div class="column_content">
+            <div class="column-content">
               <label for="zip" class="label text">Zip code</label>
               <br>
-              <input type="text" class="input zipcode" id="zip" name="zip" autocomplete="off" placeholder="Zip Code"
-                required>
-              <error-output class="zip_error"></error-output>
+              <input type="text" class="input zipcode" id="zip" name="zip" autocomplete="off"
+                placeholder="Your zipcode.." required>
+              <error-output class="zip-error"></error-output>
             </div>
           </div>
         </div>
-        <div class="button_content">
-          <button type="submit" class="button button_submit" id="submitButton">Add</button>
-          <button type="reset" class="button button_reset" id="resetButton">Reset</button>
+        <div class="buttons-contact">
+          <button type="submit" class="button button-submit" id="submitButton">Add</button>
+          <button type="reset" class="button button-reset" id="resetButton">Reset</button>
         </div>
       </div>
     </form>
