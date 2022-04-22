@@ -45,6 +45,13 @@ const remove = (node) => {
   createInnerHtml();
 }
 
+const update = (node) => {
+  let addressBookData = addressBookList.find(contact => contact._id == node.id);
+  if (!addressBookData) return;
+  localStorage.setItem('editAddressBook', JSON.parse(addressBookData));
+  window.location.replace(site_properties.address_book_form);
+}
+
 const createAddressBookJSON = () => {
     let addressBookListLocal = [
         {

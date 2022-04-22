@@ -1,3 +1,6 @@
+let isUpdate = false;
+let addressBookObj = {};
+
 window.addEventListener("DOMContentLoaded", (event) => {
   validateName();
   validatePhoneNumber();
@@ -68,6 +71,23 @@ const validateZipcode = () => {
     }
   });
 };
+
+const checkForUpdate = () => {
+  const addressBookJSON = localStorage.getItem('editAddressBook');
+  isUpdate = addressBookJSON ? true : false;
+  if (!isUpdate) return;
+  addressBookObj = JSON.parse(addressBookJSON);
+  setForm();
+}
+
+const setForm = () => {
+  setTextValue('#name', addressBookObj._name);
+  setTextValue('#address', addressBookObj._address);
+  setTextValue('#city', addressBookObj._city);
+  setTextValue('#state', addressBookObj._state);
+  setTextValue('#zip', addressBookObj._zip);
+  setTextValue('#phoneNumber', addressBookObj._phoneNumber);
+}
 
 const save = () => {
   try {
@@ -140,6 +160,19 @@ const createContact = () => {
   return contact;
 }
 
+const resetForm = () => {
+  setTextValue('#name', '');
+  setTextValue('#address', '');
+  setIndexValue('#city', 0);
+  setIndexValue('#state', 0);
+  setTextValue('#zip', '');
+  setTextValue('#phoneNumber', '');
+  setTextValue(".name-error", "");
+  setTextValue(".tel-error", "");
+  setTextValue(".address-error", "");
+  setTextValue(".zip-error", "");
+}
+
 const setTextValue = (id, value) => {
   const element = document.querySelector(id);
   element.textContent = value;
@@ -149,3 +182,8 @@ const getInputValueById = (property) => {
   let value = document.querySelector(property).value;
   return value;
 };
+
+const setIndexValue = (id, value) => {
+  const element = document.querySelector(id);
+  element.selectedIndex = value;
+}
